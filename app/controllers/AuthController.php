@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../core/Database.php';
 require_once __DIR__ . '/../models/Usuario.php';
 
@@ -72,6 +73,7 @@ class AuthController
         // =========================
         // CARREGAR VIEW
         // =========================
+        $bodyClass = 'page-login';
         require __DIR__ . '/../views/layouts/header.php';
         require __DIR__ . '/../views/home/index.php';
         require __DIR__ . '/../views/layouts/footer.php';

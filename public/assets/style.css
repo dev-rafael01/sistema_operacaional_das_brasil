@@ -1,8 +1,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 
 body{
-  min-height:100vh;
-  background: linear-gradient(85deg, #003367,#0087ce,#ffffff);
+  min-height: 100vh;
   padding: 40px 20px;
 }
 
@@ -133,3 +132,59 @@ input:focus,select:focus{
 .card h2{margin:0 0 6px;text-align:left;font-size:18px}
 .card:hover{transform:translateY(-1px)}
 .actions .btn, .actions .btn-outline{width:auto}
+
+/* =========================
+   BACKGROUNDS DAS BRASIL
+========================= */
+
+/* LOGIN com degradê + imagem suave */
+body.page-login{
+  background:
+    linear-gradient(85deg, #003367cc, #0087cecc, #ffffffcc),
+    url("/sistemaoperacionaldasbrasil/public/assets/img/page-login.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* APP com degradê + imagem suave */
+body.page-app{
+  background:
+    linear-gradient(85deg, #003367cc, #0087cecc, #ffffffcc),
+    url("/sistemaoperacionaldasbrasil/public/assets/img/page-app.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* Overlay escuro pra melhorar leitura */
+body.page-login::before,
+body.page-app::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Garante que seu conteúdo fique acima do overlay */
+.container{
+  position: relative;
+  z-index: 1;
+}
+.login-title{
+  text-align:center;
+  color:#111;          /* dentro do card, tem que ser escuro */
+  font-size: 34px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.login-subtitle{
+  text-align:center;
+  color:#333;
+  margin-bottom: 18px;
+  font-weight: 700;
+}

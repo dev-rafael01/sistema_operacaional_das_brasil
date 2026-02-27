@@ -29,7 +29,7 @@ class HomeController
                 header('Location: /sistemaoperacionaldasbrasil/');
                 exit;
             }
-
+            $bodyClass = 'page-app';
             require __DIR__ . '/../views/layouts/header.php';
             require __DIR__ . '/../views/home/logado.php';
             require __DIR__ . '/../views/layouts/footer.php';

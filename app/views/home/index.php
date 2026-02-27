@@ -1,3 +1,4 @@
+
 <div class="container">
 
   <?php if (!empty($_SESSION['success'])) : ?>
@@ -15,7 +16,9 @@
     </div>
   <?php endif; ?>
 
-  <h1>BEM-VINDO A TELA DE LOGIN DAS BRASIL</h1>
+  <h1 class="login-title">SEJA BEM-VINDO</h1>
+  <p class="login-subtitle">Login Das Brasil</p>
+
 
   <!-- ✅ action explícito e sempre POST -->
   <form action="/sistemaoperacionaldasbrasil/auth/login" method="POST">
