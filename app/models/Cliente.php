@@ -17,5 +17,14 @@ class Cliente
         $row = $stmt->fetch();
         return $row ?: null;
     }
+
+    public function create(string $nome): int
+    {
+        $sql = "INSERT INTO clientes (nome) VALUES (:nome)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['nome' => $nome]);
+        
+        return (int)$this->pdo->lastInsertId();
+    }
 }
 ?>

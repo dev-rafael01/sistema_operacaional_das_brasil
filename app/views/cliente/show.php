@@ -154,83 +154,102 @@
     <div class="hr"></div>
 
     <h2>Vídeos (até 3 min cada)</h2>
-    <p class="muted">Você pode enviar vídeos curtos (MP4). Se já existir vídeo salvo, ele aparece abaixo.</p>
 
-    <label>Painel elétrico</label>
-    <?php if (!empty($checklist['video_painel_eletrico'])): ?>
-      <video controls style="width:100%;border-radius:12px;margin-bottom:10px;">
-        <source src="<?= htmlspecialchars($checklist['video_painel_eletrico']) ?>" type="video/mp4">
-      </video>
-    <?php endif; ?>
-    <input type="file" name="video_painel_eletrico" accept="video/mp4,video/webm,video/quicktime" <?= !$podeEditar ? 'disabled' : '' ?>>
+  <!-- ================= PAINEL ELETRICO ================= -->
+  <label>Painel elétrico</label>
 
-    <?php if (!empty($checklist['video_painel_eletrico']) && $podeEditar): ?>
-        <form method="POST" action="/sistemaoperacionaldasbrasil/checklist/delete-video">      <button type="submit"
+  <?php if (!empty($checklist['video_painel_eletrico'])): ?>
+    <video controls style="width:100%;border-radius:12px;margin-bottom:10px;">
+      <source src="<?= htmlspecialchars($checklist['video_painel_eletrico']) ?>" type="video/mp4">
+    </video>
+  <?php endif; ?>
+
+  <input type="file" name="video_painel_eletrico" <?= !$podeEditar ? 'disabled' : '' ?>>
+
+  <?php if (!empty($checklist['video_painel_eletrico']) && $podeEditar): ?>
+    <button type="submit"
             name="delete_video"
             value="video_painel_eletrico"
-            class="btn btn-danger"
+            class="btn btn-outline"
+            style="background:#ffdddd;color:#a00;border-color:#a00;margin-bottom:15px;"
             onclick="return confirm('Deseja realmente excluir este vídeo?')">
         Excluir vídeo
     </button>
-       </form>
-      <?php endif; ?>
+  <?php endif; ?>
 
-    <label>Sistema primário</label>
-    <?php if (!empty($checklist['video_sistema_primario'])): ?>
-      <video controls style="width:100%;border-radius:12px;margin-bottom:10px;">
-        <source src="<?= htmlspecialchars($checklist['video_sistema_primario']) ?>" type="video/mp4">
-      </video>
+
+  <!-- ================= SISTEMA PRIMARIO ================= -->
+  <label>Sistema primário</label>
+
+  <?php if (!empty($checklist['video_sistema_primario'])): ?>
+    <video controls style="width:100%;border-radius:12px;margin-bottom:10px;">
+      <source src="<?= htmlspecialchars($checklist['video_sistema_primario']) ?>" type="video/mp4">
+    </video>
+  <?php endif; ?>
+
+  <input type="file" name="video_sistema_primario" <?= !$podeEditar ? 'disabled' : '' ?>>
+
+  <?php if (!empty($checklist['video_sistema_primario']) && $podeEditar): ?>
+    <button type="submit"
+            name="delete_video"
+            value="video_sistema_primario"
+            class="btn btn-outline"
+            style="background:#ffdddd;color:#a00;border-color:#a00;margin-bottom:15px;"
+            onclick="return confirm('Deseja realmente excluir este vídeo?')">
+        Excluir vídeo
+    </button>
+  <?php endif; ?>
+
+
+  <!-- ================= SISTEMA SECUNDARIO ================= -->
+  <label>Sistema secundário</label>
+
+  <?php if (!empty($checklist['video_sistema_secundario'])): ?>
+    <video controls style="width:100%;border-radius:12px;margin-bottom:10px;">
+      <source src="<?= htmlspecialchars($checklist['video_sistema_secundario']) ?>" type="video/mp4">
+    </video>
+  <?php endif; ?>
+
+  <input type="file" name="video_sistema_secundario" <?= !$podeEditar ? 'disabled' : '' ?>>
+
+  <?php if (!empty($checklist['video_sistema_secundario']) && $podeEditar): ?>
+    <button type="submit"
+            name="delete_video"
+            value="video_sistema_secundario"
+            class="btn btn-outline"
+            style="background:#ffdddd;color:#a00;border-color:#a00;margin-bottom:15px;"
+            onclick="return confirm('Deseja realmente excluir este vídeo?')">
+        Excluir vídeo
+    </button>
+  <?php endif; ?>
+
+
+  <!-- ================= SISTEMA TERCIARIO ================= -->
+  <label>Sistema terciário</label>
+
+  <?php if (!empty($checklist['video_sistema_terciario'])): ?>
+    <video controls style="width:100%;border-radius:12px;margin-bottom:10px;">
+      <source src="<?= htmlspecialchars($checklist['video_sistema_terciario']) ?>" type="video/mp4">
+    </video>
+  <?php endif; ?>
+
+  <input type="file" name="video_sistema_terciario" <?= !$podeEditar ? 'disabled' : '' ?>>
+
+    <?php if (!empty($checklist['video_sistema_terciario']) && $podeEditar): ?>
+      <button type="submit"
+            name="delete_video"
+            value="video_sistema_terciario"
+            class="btn btn-outline"
+            style="background:#ffdddd;color:#a00;border-color:#a00;margin-bottom:15px;"
+            onclick="return confirm('Deseja realmente excluir este vídeo?')">
+        Excluir vídeo
+      </button>
     <?php endif; ?>
-    <input type="file" name="video_sistema_primario" accept="video/mp4,video/webm,video/quicktime" <?= !$podeEditar ? 'disabled' : '' ?>>
-    <?php if (!empty($checklist['video_painel_eletrico']) && $podeEditar): ?>
-        <form method="POST" action="/sistemaoperacionaldasbrasil/checklist/delete-video"      style="margin-bottom:10px;">
-         <input type="hidden" name="cliente_id" value="<?= (int)$cliente['id'] ?>">
-         <input type="hidden" name="campo" value="video_painel_eletrico">
-         <button type="submit" class="btn btn-outline" style="background:#ffdddd;color:#a00;    border-color:#a00;">
-           Excluir vídeo
-         </button>
-       </form>
+
+      <?php if ($podeEditar): ?>
+        <button class="btn" type="submit">Salvar</button>
       <?php endif; ?>
-
-    <label>Sistema secundário</label>
-    <?php if (!empty($checklist['video_sistema_secundario'])): ?>
-      <video controls style="width:100%;border-radius:12px;margin-bottom:10px;">
-        <source src="<?= htmlspecialchars($checklist['video_sistema_secundario']) ?>" type="video/mp4">
-      </video>
-    <?php endif; ?>
-    <input type="file" name="video_sistema_secundario" accept="video/mp4,video/webm,video/quicktime" <?= !$podeEditar ? 'disabled' : '' ?>>
-    <?php if (!empty($checklist['video_painel_eletrico']) && $podeEditar): ?>
-
-        <form method="POST" action="/sistemaoperacionaldasbrasil/checklist/delete-video"      style="margin-bottom:10px;">
-         <input type="hidden" name="cliente_id" value="<?= (int)$cliente['id'] ?>">
-         <input type="hidden" name="campo" value="video_painel_eletrico">
-         <button type="submit" class="btn btn-outline" style="background:#ffdddd;color:#a00;    border-color:#a00;">
-           Excluir vídeo
-         </button>
-       </form>
-      <?php endif; ?>
-
-    <label>Sistema terciário</label>
-    <?php if (!empty($checklist['video_sistema_terciario'])): ?>
-      <video controls style="width:100%;border-radius:12px;margin-bottom:10px;">
-        <source src="<?= htmlspecialchars($checklist['video_sistema_terciario']) ?>" type="video/mp4">
-      </video>
-    <?php endif; ?>
-    <input type="file" name="video_sistema_terciario" accept="video/mp4,video/webm,video/quicktime" <?= !$podeEditar ? 'disabled' : '' ?>>
-    <?php if (!empty($checklist['video_painel_eletrico']) && $podeEditar): ?>
-        <form method="POST" action="/sistemaoperacionaldasbrasil/checklist/delete-video"      style="margin-bottom:10px;">
-         <input type="hidden" name="cliente_id" value="<?= (int)$cliente['id'] ?>">
-         <input type="hidden" name="campo" value="video_painel_eletrico">
-         <button type="submit" class="btn btn-outline" style="background:#ffdddd;color:#a00;    border-color:#a00;">
-           Excluir vídeo
-         </button>
-       </form>
-      <?php endif; ?>
-
-    <?php if ($podeEditar): ?>
-      <button class="btn" type="submit">Salvar</button>
-    <?php endif; ?>
-  </form>
+    </form>
 
   <div class="actions">
     <a class="btn btn-outline" href="/sistemaoperacionaldasbrasil/cliente/index">Voltar para clientes</a>
