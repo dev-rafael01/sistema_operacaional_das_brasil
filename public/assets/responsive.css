@@ -1,0 +1,57 @@
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+  body{
+    padding:20px 12px;
+  }
+
+  .container{
+    max-width:100%;
+    margin:20px auto;
+    padding:20px;
+    border-radius:14px;
+  }
+
+  h1{font-size:22px}
+  h2{font-size:18px}
+
+  label{font-size:13px}
+
+  input,select{
+    padding:10px;
+    font-size:14px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .actions{
+    flex-direction:column;
+  }
+
+  .actions .btn,
+  .actions .btn-outline{
+    width:100%;
+  }
+
+  .btn{
+    font-size:14px;
+  }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:1024px){
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
